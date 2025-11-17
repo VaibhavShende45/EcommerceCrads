@@ -1,5 +1,7 @@
 import React from 'react'
 import Card from './components/card'
+import AdminCardList from './components/admin/adminCardList';
+
 const jobOpenings = [
 {
   brandLogo: "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg",
@@ -106,7 +108,7 @@ const jobOpenings = [
 const App = () => {
 
 console.log(jobOpenings);
-
+localStorage.setItem("myList", JSON.stringify(jobOpenings));
   return (
     <div className='parent'>
       {jobOpenings.map(function(elem, idx) {
@@ -116,6 +118,7 @@ console.log(jobOpenings);
           </div>
         )
       })}
+      <AdminCardList/>
      </div>
   )
 }
