@@ -1,0 +1,125 @@
+import React from 'react'
+import Card from './components/card'
+const jobOpenings = [
+{
+  brandLogo: "https://cdn2.hubspot.net/hubfs/53/image8-2.jpg",
+  companyName: "Google",
+  datePosted: "5 days ago",
+  post: "Frontend Engineer",
+  tag1: "Full Time",
+  tag2: "Junior Level",
+  pay: "$45/hour",
+  location: "Bangalore, India"
+},
+{
+  brandLogo: "https://static.vecteezy.com/system/resources/thumbnails/004/201/564/small/meta-social-network-emblem-blue-stylish-letter-m-or-mobius-band-vector.jpg",
+  companyName: "Meta",
+  datePosted: "10 days ago",
+  post: "Backend Developer",
+  tag1: "Full Time",
+  tag2: "Senior Level",
+  pay: "$60/hour",
+  location: "Hyderabad, India"
+},
+{
+  brandLogo: "https://thumbs.dreamstime.com/b/amazon-logo-white-background-montreal-canada-july-printed-paper-98221126.jpg",
+  companyName: "Amazon",
+  datePosted: "3 days ago",
+  post: "Cloud Support Engineer",
+  tag1: "Full Time",
+  tag2: "Junior Level",
+  pay: "$42/hour",
+  location: "Mumbai, India"
+},
+{
+  brandLogo: "https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png",
+  companyName: "Apple",
+  datePosted: "7 days ago",
+  post: "iOS Developer",
+  tag1: "Full Time",
+  tag2: "Senior Level",
+  pay: "$70/hour",
+  location: "Bangalore, India"
+},
+{
+  brandLogo: "https://static.vecteezy.com/system/resources/previews/017/396/804/non_2x/netflix-mobile-application-logo-free-png.png",
+  companyName: "Netflix",
+  datePosted: "12 days ago",
+  post: "UI/UX Designer",
+  tag1: "Part Time",
+  tag2: "Junior Level",
+  pay: "$38/hour",
+  location: "Mumbai, India"
+},
+{
+  brandLogo: "https://s3-alpha.figma.com/hub/file/2747494711/31b6ad5c-b404-4086-a685-89b1d5294f1c-cover.png",
+  companyName: "Microsoft",
+  datePosted: "1 day ago",
+  post: "Full Stack Engineer",
+  tag1: "Full Time",
+  tag2: "Senior Level",
+  pay: "$75/hour",
+  location: "Hyderabad, India"
+},
+{
+  brandLogo: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEX///8AAABjY2Nra2udnZ2urq6YmJjq6upCQkJSUlKKiorz8/Opqamjo6PV1dW6urrb29srKys5OTnu7u75+fnh4eHOzs4gICDs7OwlJSUxMTF6enqHh4dfX19zc3NWVlbHx8dISEjIyMh9fX0XFxcODg6RkZE+Pj5VNB8uAAAID0lEQVR4nO2d67qqIBCGXR4ys6KDWiu1tKx9/3e4M1cJOqCWSPLw/trPXobzKQ4zMKimKRQKhUKhUCgUCoVCoegXd7tflvjbrWiD+sBzl2huRsa/3Q/MdRofzQUKbE+0qR3x7BWaXOI1RRdElh5n86Xtija9mW1ghadDB2kkO8cwA1+0CBreea7/vq2NvKETtBcth8TzrUs/4jB0c/kdndbzTaN3dU/iWyDY59pI7+JP3iFzzKUoecGNt7oXRzT4eOKiY1vrskPqxHEYRgsT4xZejNhJN607+GlhDydvi/Rro0XXqXEx0cq3t6zL77m27yeLKHRoUQGGsxhmIEFxoyU3K3C7divP85F5bNL5b8Hb8wTszrkxrODDM6zQLM1Y55ha/AYRn+VafnUz6GuY9lbWccoQefz0MsLYKf2UxtwHLux2FSSJaTI9xMJESbCCDrFRRA//DlZPqnBcysk29fHKR1bkrJ/eaMd4JKNnK7v0uEC1hvaWTjkr6ldcwax+nsxAxL3ztsnkWOvKMbXJea3B+GZVukMQbeon3vEQqNlVa8Izbosd3GgBzozSYgAfnp0iRIwLq1taOcTkolAj/OgxwTqfm0Qsz/ADPzW0fv/goFu4ytWNcLB8BGI3McVNbhO9rYDmvOY8MsQfgmV5hSecFP7dxMOkvLjbttEbMFAbrX54Msuzech5/B/Ld33G/t66XvbOvdUY3rxIa0bdWv92Oim7wCr3vgteAu/u9FKOXOjU2sQco9IU6vTrQxmtefP61eLAMuxkYM6NaGDV+ffOgBmUO2c6ThoJ3kSLVKLGdTZMbuFfmlMnGMw+580m4jN/ge/aduf35fpbp89AI9znNIDYrTXOXxuLD9rY8H8au7lQksujhfMHLfwM8Ci6n8wdzu8N2O8+xzkDPIf3OIZpwvV348THKJpZlnWBLPTqV+hkWWYURWF82qyZ+T2fpKmOT7kJ0yMKfPwx8YELYAO9HLfbs5coormzgQTewzUgZj4As33Q3YauTt09bsH5rsEE3i907UbA+VFKuRcVwPmdZS3xhRIUfpCDRkaZg2qXPvxSzkGOms7Q6zRnPO6iTTZNWik80c6B9xRuKSEdt7zE1IkvyjRFBeqURPkcb4btoU+CP4ezpoYZ7TIIugN5DjccE8IG5o+ueqEf0CqFoIcpy8ffQ5ErpZ6ZkWlRhbSNQvrP87mqi+h1fc8ChrMXbRLlDaPxTTTgmtpbtJmriEQb+RFtnKk4N9ILLRTyWUgajBYKR17hRls7KqGPpuOgOW7TRZv4Ic3OdNyutL4kV2fApI8LXqNCMTF1jzTNr16/rAqxO01x2z/RBn5M0+xvdU1qfCwbFHJakR+QJmeaiDbwc4BaERzR2V8PNKyEizavByKmwPG7Uk1LmAoZczyjge1M56LN6wF23Dby9LeAWfo08uSwgLV4kYk2rhdqJZYY44/ZcljO9Nb88xHAKrLkUcwsAIbCb5/Rbgm9PiUb+UziE3qRUSratJ6wqAqPok3rCaDo5I/xp78FdGcqRcyWQy1HlSD9LaDFbXz2hYiAtnghiyull1uOfcmihOZMx75kUQIUXD4Qtkm7f1JYoWizeoRSuS7arB6B4zb6vsTxARedyBKz5cBxmzyuVKMkwZKkvwXg4oUUM4lPoLhNnpgtByo6kWHJogRaJx15xV4VQKFEMVtOKrkrLWvSSw5SuVJNM2sKqbssRkp9nVSe9Leg7kylitk06BURkrlSIG77jhfq9Ui16GQt2qDeqcZtYy9+rlN1ppLFbHfcyvZY2VypVis6kSxmy6ksXog2hwNksbBc6W8BWXQiW8yWQ27Ol8+VapUkWLqYLSfFFUpSZkKCF50M8JYZAeCLF3JU7FXBN+fL6ErJxYtEtDF8wHZejH7DGky5TipLxV6V0plORZvCiTJuk9OV4kUnMuyygChfljjIO8lE8IrbJEx/C17OVLQh3HjGbbK60rLohPb26/Gz/1MoyS4LiKvE6W/B384LKZPDgqLoRL4li5Ji8UKWXRYQRdwmx4Y1Cg+FEi5ZlPyTOmbLuUic/hbkRSdO82EjJpDclRaLF1IuWbzw1hJtWIPRJdqwBhNJtGENBknuSvPFC3nT34K93DFbzk7i9LdA9sdQ0+Qe7xUKhUKhUCgUCoVCoVAoFAqFQqFQKD7AP+kwp9cqmZc6EFNsGe0MtRJjZSdufgDVCDOGLIh7qo9b/8BkZZEo/IrZX6yKFP76GlYqbDPr2ynvP036UUj7AAfWvAt+MRbfUwEqxCuH2Arhz2L1VnmUQN9zvyb4IX5aP4BYzIYUEm9NbFAIfawm7Evg/TlDkxwz/4KaYz7+bVVfvXK2SBBZ6JwrTBFxANlCk0LNL078wuRRlXP7ebv4FTV1qkaFg5ArfLNUJFfI3K8mhcIR30NvM4VYYxV6ucK1UR3QsBcnshV64KAc9/4oUu8h/Jbg5vHwUB7AVkh5MX/vm4mpCrfQePKTYEfACrEPcn+5Qs0Hvo/XOB6OSuE9LGCPh/688ncr6qowMxc42dAKOxN0VVjZSrT+eoVJZ4Vkr/h+hd3voUCF3sSEmJAG+MQfFyGg0JqTLJ4ZpmiFWgq7OnxrjAuNmVWFNZLnr0UrhFNIvMzSv0JHNCl8vQ9sKIX5ay3g98pAwx1+LTwwRa7FNBXWr06QK9yRCnc8FFq6oVP2KG9nBklI1Doj3YDALpcb1/46Kf/q3f8akgpDw9Cl3gOnUCgUCoVCoVAoFApFF/4DSOdn3TlSsJQAAAAASUVORK5CYII=",
+  companyName: "Tesla",
+  datePosted: "9 days ago",
+  post: "Software Engineer",
+  tag1: "Full Time",
+  tag2: "Junior Level",
+  pay: "$50/hour",
+  location: "Pune, India"
+},
+{
+  brandLogo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr54hReWeo6iwlzKk5x7ECcW16bhAjRIRc_Q&s",
+  companyName: "Adobe",
+  datePosted: "13 days ago",
+  post: "MERN Stack Developer",
+  tag1: "Part Time",
+  tag2: "Senior Level",
+  pay: "$55/hour",
+  location: "Noida, India"
+},
+{
+  brandLogo: "data:image/jpeg;base64,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",
+  companyName: "Intel",
+  datePosted: "4 days ago",
+  post: "DevOps Engineer",
+  tag1: "Full Time",
+  tag2: "Junior Level",
+  pay: "$48/hour",
+  location: "Bangalore, India"
+},
+{
+  brandLogo: "data:image/png;base64,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",
+  companyName: "Nvidia",
+  datePosted: "8 days ago",
+  post: "AI/ML Engineer",
+  tag1: "Full Time",
+  tag2: "Senior Level",
+  pay: "$85/hour",
+  location: "Hyderabad, India"
+}
+];
+
+const App = () => {
+
+console.log(jobOpenings);
+
+  return (
+    <div className='parent'>
+      {jobOpenings.map(function(elem, idx) {
+        return(
+        <div key={idx}> 
+          <Card data={elem.companyName}post={elem.post} date={elem.datePosted}tag1={elem.
+            tag1}tag2={elem.tag2} pay={elem.pay}location={elem.
+            location}brandLogo={elem.brandLogo}/>
+          </div>
+        )
+      })}
+     </div>
+  )
+}
+
+export default App
